@@ -12,13 +12,19 @@ def Main():
 
     #
     PlotsReadyForHarvest = 0
-
+    LastWorldSize = 0
+    
     # Loop
     while True:
 
         # Set World Size
         WorldSize = get_world_size() * get_world_size()
 
+        # Reset
+        if WorldSize != LastWorldSize:
+            clear()
+        LastWorldSize = WorldSize
+        
         #if Unlocks.Sunflowers and Unlocks.Lists:
         #    SunflowerArea = [0, 1, get_world_size() + 2]
 
@@ -77,8 +83,8 @@ def Main():
                             PlotsReadyForHarvest = 0
 
                     else:
-                        if get_entity_type() == WhatToMake:
-                            harvest()
+                        #if get_entity_type() == WhatToMake:
+                        harvest()
                         PlotsReadyForHarvest = 0
 
                 # Plant
